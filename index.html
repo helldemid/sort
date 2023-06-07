@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        background: var(--greyLight-1);
+    }
+
+    :root {
+        --primary-light: #8abdff;
+        --primary: #6d5dfc;
+        --primary-dark: #5b0eeb;
+        
+        --white: #FFFFFF;
+        --greyLight-1: #E4EBF5;
+        --greyLight-2: #c8d0e7;
+        --greyLight-3: #bec8e4;
+        --greyDark: #9baacf;
+    }
+    
+    * {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+    }
+    
+    .bar-container {
+      display: flex;
+      align-items: flex-end;
+      height: 500px;
+    }
+
+    .bar-container:first-child{
+        margin-left: 5px;
+    }
+
+    .bar {
+      flex: 1 0 20px;
+      margin-right: 5px;
+      background-color: var(--primary);
+      transition: height 0.1s ease;
+      height: 1px;
+    }
+
+    .activeBar {
+        background-color: black;
+    }
+
+    .btn {
+        width: 15rem;
+        height: 4rem;
+        border-radius: 1rem;
+        box-shadow: .3rem .3rem .6rem var(--greyLight-2), 
+        -.2rem -.2rem .5rem var(--white);;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: .3s ease;
+
+        border: none;
+        
+
+    }
+
+    .btn_primary {
+
+        background: var(--primary);
+        box-shadow:inset .2rem .2rem 1rem var(--primary-light), 
+            inset -.2rem -.2rem 1rem var(--primary-dark),
+            .3rem .3rem .6rem var(--greyLight-2), 
+            -.2rem -.2rem .5rem var(--white);
+                color: var(--greyLight-1);
+            
+
+    }
+
+    .btn:hover { 
+        color: var(--primary-dark); 
+    }
+    .btn:active {
+    box-shadow: 
+            inset -.2rem -.2rem 1rem var(--primary-light);
+    }
+
+    .btn_primary:hover { color: var(--white); }
+
+    .buttonBlock {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .initial_array {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    input {
+        height: 1.5em;
+        width: 100px;
+        border: none;
+        border-radius: 0.7rem;
+        font-size: 1.4rem;
+        padding-left: 1.4rem;
+        box-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+        inset -.2rem -.2rem .5rem var(--white);
+        background: none;
+        font-family: inherit;
+        color: var(--greyDark);
+
+
+    }
+
+    input::placeholder { color: var(--greyLight-3); }
+    input:focus { outline: none; box-shadow: .3rem .3rem .6rem var(--greyLight-2), 
+        -.2rem -.2rem .5rem var(--white); }
+    </style>
+</head>
+<body>
+    <div id="bars" class="bar-container">
+        <div class="bar" index = "0"></div>
+        <div class="bar" index = "1"></div>
+        <div class="bar" index = "2"></div>
+        <div class="bar" index = "3"></div>
+        <div class="bar" index = "4"></div>
+        <div class="bar" index = "5"></div>
+        <div class="bar" index = "6"></div>
+        <div class="bar" index = "7"></div>
+        <div class="bar" index = "8"></div>
+        <div class="bar" index = "9"></div>
+    </div>
+
+    <div class="buttonBlock">
+        <button class="btn" id = "rand">Random fill</button>
+        <button class="btn" id = "add">Add value</button>
+        <button class="btn" id = "delete">Delete value</button>
+        <button class="btn btn_primary" id = "sort">Sort array</button>
+    </div>
+
+    <div class="initial_array">
+        <input type="number" value="0" min = "0" max="100" index = "0">
+        <input type="number" value="0" min = "0" max="100" index = "1">
+        <input type="number" value="0" min = "0" max="100" index = "2">
+        <input type="number" value="0" min = "0" max="100" index = "3">
+        <input type="number" value="0" min = "0" max="100" index = "4">
+        <input type="number" value="0" min = "0" max="100" index = "5">
+        <input type="number" value="0" min = "0" max="100" index = "6">
+        <input type="number" value="0" min = "0" max="100" index = "7">
+        <input type="number" value="0" min = "0" max="100" index = "8">
+        <input type="number" value="0" min = "0" max="100" index = "9">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
